@@ -26,7 +26,7 @@ pipeline {
 
       stage('Push image') {
         when {
-          branch 'master'
+          branch 'main'
         }
         steps {
           script {
