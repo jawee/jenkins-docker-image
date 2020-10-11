@@ -1,3 +1,3 @@
 # Jenkins
 
-Used for building hugo, docker images and node
+Used for building hugo, docker images and node applications.
