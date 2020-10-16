@@ -6,7 +6,7 @@ pipeline {
       stage('Build image') {
         steps {
           script {
-            app = docker.build("jawee/jenkins", "--no-cache")
+            app = docker.build("jawee/jenkins", "--no-cache .")
           }
 
         }
