@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.282
+FROM jenkins/jenkins:2.283
 
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
