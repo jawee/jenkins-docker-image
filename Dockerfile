@@ -1,13 +1,13 @@
-FROM jenkins/jenkins:2.290
+FROM jenkins/jenkins:2.291
 
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y rsync
 
 # Hugo stuff
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.83.0/hugo_0.83.0_Linux-64bit.deb 
-RUN dpkg -i hugo_0.83.0_Linux-64bit.deb
-RUN rm hugo_0.83.0_Linux-64bit.deb
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_0.83.1_Linux-64bit.deb 
+RUN dpkg -i hugo_0.83.1_Linux-64bit.deb
+RUN rm hugo_0.83.1_Linux-64bit.deb
 
 # Node stuff
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
