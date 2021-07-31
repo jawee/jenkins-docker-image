@@ -6,9 +6,9 @@ RUN apt-get install -y rsync
 RUN apt-get install -y wget
 
 # Hugo stuff
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.86.0/hugo_0.86.0_Linux-64bit.deb
-RUN dpkg -i hugo_0.86.0_Linux-64bit.deb
-RUN rm hugo_0.86.0_Linux-64bit.deb
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.86.1/hugo_0.86.1_Linux-64bit.deb
+RUN dpkg -i hugo_0.86.1_Linux-64bit.deb
+RUN rm hugo_0.86.1_Linux-64bit.deb
 
 # Node stuff
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
