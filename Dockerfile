@@ -1,22 +1,21 @@
 FROM jenkins/jenkins:2.314-jdk11
 
 USER root
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
-RUN apt-get install -y rsync
-RUN apt-get install -y wget
+RUN apt update && apt-get install -y --no-install-recommends apt-utils
+RUN apt install -y rsync
 
 # Hugo stuff
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_0.88.1_Linux-64bit.deb
+RUN curl -O https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_0.88.1_Linux-64bit.deb
 RUN dpkg -i hugo_0.88.1_Linux-64bit.deb
 RUN rm hugo_0.88.1_Linux-64bit.deb
 
 # Node stuff
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs
+RUN apt install -y nodejs
 RUN npm install -g npm@latest
 
 # Dockerstuff
-RUN apt-get install -y\
+RUN apt install -y\
       apt-transport-https \
       ca-certificates \
       curl \
@@ -27,9 +26,17 @@ RUN add-apt-repository \
       "deb [arch=amd64] https://download.docker.com/linux/debian \
       $(lsb_release -cs) \
       stable"
-RUN apt-get update
-RUN apt-get install -y docker-ce docker-ce-cli containerd.io
+RUN apt update
+RUN apt install -y docker-ce docker-ce-cli containerd.io
 RUN usermod -aG docker jenkins
 RUN chmod g+s /usr/bin/docker
+
+
+# dotnet
+RUN curl -O https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb
+RUN dpkg -i packages-microsoft-prod.deb
+RUN rm packages-microsoft-prod.deb
+RUN apt update
+RUN apt install -y dotnet-sdk-5.0
 
 USER jenkins
