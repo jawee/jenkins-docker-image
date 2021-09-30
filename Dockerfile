@@ -3,9 +3,10 @@ FROM jenkins/jenkins:2.314-jdk11
 USER root
 RUN apt update && apt-get install -y --no-install-recommends apt-utils
 RUN apt install -y rsync
+RUN apt install -y wget
 
 # Hugo stuff
-RUN curl -O https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_0.88.1_Linux-64bit.deb
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.88.1/hugo_0.88.1_Linux-64bit.deb
 RUN dpkg -i hugo_0.88.1_Linux-64bit.deb
 RUN rm hugo_0.88.1_Linux-64bit.deb
 
