@@ -39,6 +39,5 @@ RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
 RUN apt-get update
 RUN apt-get install -y dotnet-sdk-5.0
-RUN dotnet tool install --global dotnet-reportgenerator-globaltool --version 4.8.13
 
 USER jenkins
