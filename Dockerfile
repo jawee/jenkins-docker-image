@@ -11,7 +11,7 @@ RUN dpkg -i hugo_0.98.0_Linux-64bit.deb
 RUN rm hugo_0.98.0_Linux-64bit.deb
 
 # Node stuff
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g npm@latest
 
