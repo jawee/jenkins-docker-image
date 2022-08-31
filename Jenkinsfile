@@ -12,18 +12,6 @@ pipeline {
         }
       }
 
-      stage('Test image') {
-        /* TODO */
-
-        steps {
-          script {
-            app.inside {
-              sh 'echo "Tests passed"'
-            }
-          }
-        }
-      }
-
       stage('Push image') {
         when {
           branch 'main'
