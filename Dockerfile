@@ -6,7 +6,7 @@ RUN apt-get install -y rsync
 RUN apt-get install -y wget
 
 # Hugo stuff
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.104.0/hugo_0.103.1_linux-amd64.deb
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.104.0/hugo_0.104.0_linux-amd64.deb
 RUN dpkg -i hugo_0.104.0_linux-amd64.deb
 RUN rm hugo_0.104.0_linux-amd64.deb
 
