@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.394-jdk11
+FROM jenkins/jenkins:2.395-jdk11
 
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
