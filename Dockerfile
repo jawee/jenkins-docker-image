@@ -34,11 +34,11 @@ RUN chmod g+s /usr/bin/docker
 
 
 # dotnet
-RUN curl -O https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb
-RUN dpkg -i packages-microsoft-prod.deb
-RUN rm packages-microsoft-prod.deb
-RUN apt-get update
-RUN apt-get install -y dotnet-sdk-5.0
-RUN apt-get install -y dotnet-sdk-6.0
+# RUN curl -O https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb
+# RUN dpkg -i packages-microsoft-prod.deb
+# RUN rm packages-microsoft-prod.deb
+# RUN apt-get update
+# RUN apt-get install -y dotnet-sdk-5.0
+# RUN apt-get install -y dotnet-sdk-6.0
 
 USER jenkins
