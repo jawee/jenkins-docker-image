@@ -5,11 +5,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y rsync
 RUN apt-get install -y wget
 
-# Hugo stuff
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.113.0/hugo_0.113.0_linux-amd64.deb
-RUN dpkg -i hugo_0.113.0_linux-amd64.deb
-RUN rm hugo_0.113.0_linux-amd64.deb
-
 # Node stuff
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
