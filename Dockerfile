@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.426-jdk21
+FROM jenkins/jenkins:2.441-jdk21
 
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
